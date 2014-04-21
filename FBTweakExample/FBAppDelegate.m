@@ -12,6 +12,8 @@
 #import <FBTweak/FBTweakInline.h>
 #import <FBTweak/FBTweakViewController.h>
 
+#import <FBTweak/FBTweakMultipeer.h>
+
 #import "FBAppDelegate.h"
 
 @interface FBAppDelegate () <FBTweakObserver, FBTweakViewControllerDelegate>
@@ -97,6 +99,11 @@
       _label.transform = CGAffineTransformIdentity;
     }];
   }];
+}
+
+- (void)applicationDidBecomeActive:(UIApplication *)application
+{
+    [[FBTweakMultipeer shareInstance] start];
 }
 
 @end

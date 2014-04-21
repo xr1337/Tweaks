@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		184A94F018D26871005F2774 /* _FBTweakBindObserver.h in Headers */ = {isa = PBXBuildFile; fileRef = 184A94EE18D26871005F2774 /* _FBTweakBindObserver.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		184A94F118D26871005F2774 /* _FBTweakBindObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 184A94EF18D26871005F2774 /* _FBTweakBindObserver.m */; };
+		188658A119059D2C002B51F0 /* FBTweakMultipeer.h in Headers */ = {isa = PBXBuildFile; fileRef = 1886589F19059D2C002B51F0 /* FBTweakMultipeer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		188658A219059D2C002B51F0 /* FBTweakMultipeer.m in Sources */ = {isa = PBXBuildFile; fileRef = 188658A019059D2C002B51F0 /* FBTweakMultipeer.m */; };
 		18EFE472189EBA4900DA6A5D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18EFE471189EBA4900DA6A5D /* Foundation.framework */; };
 		18EFE480189EBA4900DA6A5D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18EFE47F189EBA4900DA6A5D /* XCTest.framework */; };
 		18EFE481189EBA4900DA6A5D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18EFE471189EBA4900DA6A5D /* Foundation.framework */; };
@@ -54,6 +56,8 @@
 /* Begin PBXFileReference section */
 		184A94EE18D26871005F2774 /* _FBTweakBindObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _FBTweakBindObserver.h; sourceTree = "<group>"; };
 		184A94EF18D26871005F2774 /* _FBTweakBindObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _FBTweakBindObserver.m; sourceTree = "<group>"; };
+		1886589F19059D2C002B51F0 /* FBTweakMultipeer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBTweakMultipeer.h; path = Remote/FBTweakMultipeer.h; sourceTree = "<group>"; };
+		188658A019059D2C002B51F0 /* FBTweakMultipeer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBTweakMultipeer.m; path = Remote/FBTweakMultipeer.m; sourceTree = "<group>"; };
 		18EFE46E189EBA4900DA6A5D /* libFBTweak.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFBTweak.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		18EFE471189EBA4900DA6A5D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		18EFE475189EBA4900DA6A5D /* FBTweak-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FBTweak-Prefix.pch"; sourceTree = "<group>"; };
@@ -111,6 +115,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1886589E19059CB9002B51F0 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				1886589F19059D2C002B51F0 /* FBTweakMultipeer.h */,
+				188658A019059D2C002B51F0 /* FBTweakMultipeer.m */,
+			);
+			name = Remote;
+			sourceTree = "<group>";
+		};
 		18EFE465189EBA4900DA6A5D = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				18EFE535189F38D500DA6A5D /* FBTweakEnabled.h */,
+				1886589E19059CB9002B51F0 /* Remote */,
 				18EFE532189F286000DA6A5D /* Inline */,
 				18EFE4B9189EBC3500DA6A5D /* Model */,
 				18EFE4BE189EBD0800DA6A5D /* UI */,
@@ -239,6 +253,7 @@
 				18EFE4B3189EBAC200DA6A5D /* FBTweakShakeWindow.h in Headers */,
 				18EFE536189F38D500DA6A5D /* FBTweakEnabled.h in Headers */,
 				18EFE4D0189EC70300DA6A5D /* FBTweakInlineInternal.h in Headers */,
+				188658A119059D2C002B51F0 /* FBTweakMultipeer.h in Headers */,
 				18EFE527189F19B300DA6A5D /* FBTweakCategory.h in Headers */,
 				18EFE4BC189EBC4B00DA6A5D /* FBTweakCollection.h in Headers */,
 				18EFE4DD189EF75800DA6A5D /* _FBTweakTableViewCell.h in Headers */,
@@ -327,6 +342,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				188658A219059D2C002B51F0 /* FBTweakMultipeer.m in Sources */,
 				18EFE4A7189EBA9E00DA6A5D /* FBTweakViewController.m in Sources */,
 				18EFE4BD189EBC4B00DA6A5D /* FBTweakCollection.m in Sources */,
 				18EFE4C2189EBEAD00DA6A5D /* FBTweakStore.m in Sources */,

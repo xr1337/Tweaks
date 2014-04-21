@@ -2,12 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:FBTweakClient/FBTweakClient.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:FBTweak.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:FBTweakExample.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:FBTweakRemote/FBTweakRemote.xcodeproj">
    </FileRef>
 </Workspace>

@@ -1,6 +1,6 @@
 //
-//  FBTweakRemoteTests.m
-//  FBTweakRemoteTests
+//  FBTweakClientTests.m
+//  FBTweakClientTests
 //
 //  Created by Sufiyan Yasa on 21/04/14.
 //  Copyright (c) 2014 XR1337. All rights reserved.
@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface FBTweakRemoteTests : XCTestCase
+@interface FBTweakClientTests : XCTestCase
 
 @end
 
-@implementation FBTweakRemoteTests
+@implementation FBTweakClientTests
 
 - (void)setUp
 {
