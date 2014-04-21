@@ -7,4 +7,7 @@
    <FileRef
       location = "group:FBTweakExample.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:FBTweakRemote/FBTweakRemote.xcodeproj">
+   </FileRef>
 </Workspace>

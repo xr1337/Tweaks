@@ -1,0 +1,513 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1886580F19055EAC002B51F0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1886580E19055EAC002B51F0 /* Foundation.framework */; };
+		1886581119055EAC002B51F0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1886581019055EAC002B51F0 /* CoreGraphics.framework */; };
+		1886581319055EAC002B51F0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1886581219055EAC002B51F0 /* UIKit.framework */; };
+		1886581919055EAC002B51F0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1886581719055EAC002B51F0 /* InfoPlist.strings */; };
+		1886581B19055EAC002B51F0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1886581A19055EAC002B51F0 /* main.m */; };
+		1886581F19055EAC002B51F0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1886581E19055EAC002B51F0 /* AppDelegate.m */; };
+		1886582219055EAC002B51F0 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1886582019055EAC002B51F0 /* Main_iPhone.storyboard */; };
+		1886582519055EAC002B51F0 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1886582319055EAC002B51F0 /* Main_iPad.storyboard */; };
+		1886582819055EAC002B51F0 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1886582719055EAC002B51F0 /* MasterViewController.m */; };
+		1886582B19055EAC002B51F0 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1886582A19055EAC002B51F0 /* DetailViewController.m */; };
+		1886582D19055EAC002B51F0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1886582C19055EAC002B51F0 /* Images.xcassets */; };
+		1886583419055EAC002B51F0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1886583319055EAC002B51F0 /* XCTest.framework */; };
+		1886583519055EAC002B51F0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1886580E19055EAC002B51F0 /* Foundation.framework */; };
+		1886583619055EAC002B51F0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1886581219055EAC002B51F0 /* UIKit.framework */; };
+		1886583E19055EAC002B51F0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1886583C19055EAC002B51F0 /* InfoPlist.strings */; };
+		1886584019055EAC002B51F0 /* FBTweakRemoteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1886583F19055EAC002B51F0 /* FBTweakRemoteTests.m */; };
+		1886585319055ECF002B51F0 /* libFBTweak.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1886585219055ECF002B51F0 /* libFBTweak.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1886583719055EAC002B51F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1886580319055EAC002B51F0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1886580A19055EAC002B51F0;
+			remoteInfo = FBTweakRemote;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1886580B19055EAC002B51F0 /* FBTweakRemote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FBTweakRemote.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1886580E19055EAC002B51F0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1886581019055EAC002B51F0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1886581219055EAC002B51F0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1886581619055EAC002B51F0 /* FBTweakRemote-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FBTweakRemote-Info.plist"; sourceTree = "<group>"; };
+		1886581819055EAC002B51F0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1886581A19055EAC002B51F0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1886581C19055EAC002B51F0 /* FBTweakRemote-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FBTweakRemote-Prefix.pch"; sourceTree = "<group>"; };
+		1886581D19055EAC002B51F0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1886581E19055EAC002B51F0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1886582119055EAC002B51F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		1886582419055EAC002B51F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		1886582619055EAC002B51F0 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		1886582719055EAC002B51F0 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		1886582919055EAC002B51F0 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		1886582A19055EAC002B51F0 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		1886582C19055EAC002B51F0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		1886583219055EAC002B51F0 /* FBTweakRemoteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FBTweakRemoteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1886583319055EAC002B51F0 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		1886583B19055EAC002B51F0 /* FBTweakRemoteTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FBTweakRemoteTests-Info.plist"; sourceTree = "<group>"; };
+		1886583D19055EAC002B51F0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1886583F19055EAC002B51F0 /* FBTweakRemoteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FBTweakRemoteTests.m; sourceTree = "<group>"; };
+		1886585219055ECF002B51F0 /* libFBTweak.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFBTweak.a; path = "../build/Debug-iphoneos/libFBTweak.a"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1886580819055EAC002B51F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1886585319055ECF002B51F0 /* libFBTweak.a in Frameworks */,
+				1886581119055EAC002B51F0 /* CoreGraphics.framework in Frameworks */,
+				1886581319055EAC002B51F0 /* UIKit.framework in Frameworks */,
+				1886580F19055EAC002B51F0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1886582F19055EAC002B51F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1886583419055EAC002B51F0 /* XCTest.framework in Frameworks */,
+				1886583619055EAC002B51F0 /* UIKit.framework in Frameworks */,
+				1886583519055EAC002B51F0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1886580219055EAC002B51F0 = {
+			isa = PBXGroup;
+			children = (
+				1886581419055EAC002B51F0 /* FBTweakRemote */,
+				1886583919055EAC002B51F0 /* FBTweakRemoteTests */,
+				1886580D19055EAC002B51F0 /* Frameworks */,
+				1886580C19055EAC002B51F0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1886580C19055EAC002B51F0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1886580B19055EAC002B51F0 /* FBTweakRemote.app */,
+				1886583219055EAC002B51F0 /* FBTweakRemoteTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1886580D19055EAC002B51F0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1886585219055ECF002B51F0 /* libFBTweak.a */,
+				1886580E19055EAC002B51F0 /* Foundation.framework */,
+				1886581019055EAC002B51F0 /* CoreGraphics.framework */,
+				1886581219055EAC002B51F0 /* UIKit.framework */,
+				1886583319055EAC002B51F0 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1886581419055EAC002B51F0 /* FBTweakRemote */ = {
+			isa = PBXGroup;
+			children = (
+				1886581D19055EAC002B51F0 /* AppDelegate.h */,
+				1886581E19055EAC002B51F0 /* AppDelegate.m */,
+				1886582019055EAC002B51F0 /* Main_iPhone.storyboard */,
+				1886582319055EAC002B51F0 /* Main_iPad.storyboard */,
+				1886582619055EAC002B51F0 /* MasterViewController.h */,
+				1886582719055EAC002B51F0 /* MasterViewController.m */,
+				1886582919055EAC002B51F0 /* DetailViewController.h */,
+				1886582A19055EAC002B51F0 /* DetailViewController.m */,
+				1886582C19055EAC002B51F0 /* Images.xcassets */,
+				1886581519055EAC002B51F0 /* Supporting Files */,
+			);
+			path = FBTweakRemote;
+			sourceTree = "<group>";
+		};
+		1886581519055EAC002B51F0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1886581619055EAC002B51F0 /* FBTweakRemote-Info.plist */,
+				1886581719055EAC002B51F0 /* InfoPlist.strings */,
+				1886581A19055EAC002B51F0 /* main.m */,
+				1886581C19055EAC002B51F0 /* FBTweakRemote-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1886583919055EAC002B51F0 /* FBTweakRemoteTests */ = {
+			isa = PBXGroup;
+			children = (
+				1886583F19055EAC002B51F0 /* FBTweakRemoteTests.m */,
+				1886583A19055EAC002B51F0 /* Supporting Files */,
+			);
+			path = FBTweakRemoteTests;
+			sourceTree = "<group>";
+		};
+		1886583A19055EAC002B51F0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1886583B19055EAC002B51F0 /* FBTweakRemoteTests-Info.plist */,
+				1886583C19055EAC002B51F0 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1886580A19055EAC002B51F0 /* FBTweakRemote */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1886584319055EAC002B51F0 /* Build configuration list for PBXNativeTarget "FBTweakRemote" */;
+			buildPhases = (
+				1886580719055EAC002B51F0 /* Sources */,
+				1886580819055EAC002B51F0 /* Frameworks */,
+				1886580919055EAC002B51F0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FBTweakRemote;
+			productName = FBTweakRemote;
+			productReference = 1886580B19055EAC002B51F0 /* FBTweakRemote.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1886583119055EAC002B51F0 /* FBTweakRemoteTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1886584619055EAC002B51F0 /* Build configuration list for PBXNativeTarget "FBTweakRemoteTests" */;
+			buildPhases = (
+				1886582E19055EAC002B51F0 /* Sources */,
+				1886582F19055EAC002B51F0 /* Frameworks */,
+				1886583019055EAC002B51F0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1886583819055EAC002B51F0 /* PBXTargetDependency */,
+			);
+			name = FBTweakRemoteTests;
+			productName = FBTweakRemoteTests;
+			productReference = 1886583219055EAC002B51F0 /* FBTweakRemoteTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1886580319055EAC002B51F0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = XR1337;
+				TargetAttributes = {
+					1886583119055EAC002B51F0 = {
+						TestTargetID = 1886580A19055EAC002B51F0;
+					};
+				};
+			};
+			buildConfigurationList = 1886580619055EAC002B51F0 /* Build configuration list for PBXProject "FBTweakRemote" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1886580219055EAC002B51F0;
+			productRefGroup = 1886580C19055EAC002B51F0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1886580A19055EAC002B51F0 /* FBTweakRemote */,
+				1886583119055EAC002B51F0 /* FBTweakRemoteTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1886580919055EAC002B51F0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1886582519055EAC002B51F0 /* Main_iPad.storyboard in Resources */,
+				1886582D19055EAC002B51F0 /* Images.xcassets in Resources */,
+				1886582219055EAC002B51F0 /* Main_iPhone.storyboard in Resources */,
+				1886581919055EAC002B51F0 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1886583019055EAC002B51F0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1886583E19055EAC002B51F0 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1886580719055EAC002B51F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1886581F19055EAC002B51F0 /* AppDelegate.m in Sources */,
+				1886582819055EAC002B51F0 /* MasterViewController.m in Sources */,
+				1886581B19055EAC002B51F0 /* main.m in Sources */,
+				1886582B19055EAC002B51F0 /* DetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1886582E19055EAC002B51F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1886584019055EAC002B51F0 /* FBTweakRemoteTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1886583819055EAC002B51F0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1886580A19055EAC002B51F0 /* FBTweakRemote */;
+			targetProxy = 1886583719055EAC002B51F0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1886581719055EAC002B51F0 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1886581819055EAC002B51F0 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1886582019055EAC002B51F0 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1886582119055EAC002B51F0 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		1886582319055EAC002B51F0 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1886582419055EAC002B51F0 /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		1886583C19055EAC002B51F0 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1886583D19055EAC002B51F0 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1886584119055EAC002B51F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1886584219055EAC002B51F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1886584419055EAC002B51F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FBTweakRemote/FBTweakRemote-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SYMROOT)/Headers",
+				);
+				INFOPLIST_FILE = "FBTweakRemote/FBTweakRemote-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/syasa/Documents/Code/ANewHope.spritebuilder/Ext/TweakMultipeer/build/Debug-iphoneos",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		1886584519055EAC002B51F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FBTweakRemote/FBTweakRemote-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SYMROOT)/Headers",
+				);
+				INFOPLIST_FILE = "FBTweakRemote/FBTweakRemote-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/syasa/Documents/Code/ANewHope.spritebuilder/Ext/TweakMultipeer/build/Debug-iphoneos",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		1886584719055EAC002B51F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FBTweakRemote.app/FBTweakRemote";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FBTweakRemote/FBTweakRemote-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "FBTweakRemoteTests/FBTweakRemoteTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		1886584819055EAC002B51F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FBTweakRemote.app/FBTweakRemote";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FBTweakRemote/FBTweakRemote-Prefix.pch";
+				INFOPLIST_FILE = "FBTweakRemoteTests/FBTweakRemoteTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1886580619055EAC002B51F0 /* Build configuration list for PBXProject "FBTweakRemote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1886584119055EAC002B51F0 /* Debug */,
+				1886584219055EAC002B51F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1886584319055EAC002B51F0 /* Build configuration list for PBXNativeTarget "FBTweakRemote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1886584419055EAC002B51F0 /* Debug */,
+				1886584519055EAC002B51F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1886584619055EAC002B51F0 /* Build configuration list for PBXNativeTarget "FBTweakRemoteTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1886584719055EAC002B51F0 /* Debug */,
+				1886584819055EAC002B51F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1886580319055EAC002B51F0 /* Project object */;
+}
