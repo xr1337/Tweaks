@@ -8,13 +8,21 @@
 
 #import "FBTweakMultipeer.h"
 
+#import "FBTweakStore.h"
+#import "FBTweakCategory.h"
+#import "FBTweakCollection.h"
+#import "FBTweak.h"
+
 static NSString *const kServiceName = @"xx-service";
 
 @interface FBTweakMultipeer () <MCSessionDelegate>
 
 @property (nonatomic, strong) MCPeerID *localPeerId;
+@property (nonatomic, strong) MCPeerID *remotePeerId;
 @property (nonatomic, strong) MCSession *session;
 @property (nonatomic, strong) MCAdvertiserAssistant *advertiser;
+
+@property (nonatomic, strong) FBTweakStore *tweakStore;
 
 @end
 
@@ -34,6 +42,8 @@ static NSString *const kServiceName = @"xx-service";
 {
     self = [super init];
     if (self) {
+        self.tweakStore = [FBTweakStore sharedInstance];
+        
         [self setupPeerWithDisplayName:[UIDevice currentDevice].name];
         [self setupSession];
     }
@@ -85,18 +95,13 @@ static NSString *const kServiceName = @"xx-service";
 {
     if (state == MCSessionStateConnected)
     {
-        NSError *error = nil;
-        [session sendData:[@"ads" dataUsingEncoding:NSStringEncodingConversionAllowLossy] toPeers:@[peerID] withMode:MCSessionSendDataReliable error:&error];
-        if (error)
-        {
-            NSLog(@"data failed to be sent");
-        }
+        self.remotePeerId = peerID;
     }
 }
 
 - (void)session:(MCSession *)session didReceiveData:(NSData *)data fromPeer:(MCPeerID *)peerID
 {
-    NSLog(@"%@", [[NSString alloc] initWithData:data encoding:NSStringEncodingConversionAllowLossy]);
+    [self handleData:data fromPeer:peerID];
 }
 
 - (void)session:(MCSession *)session didStartReceivingResourceWithName:(NSString *)resourceName fromPeer:(MCPeerID *)peerID withProgress:(NSProgress *)progress {
@@ -109,6 +114,35 @@ static NSString *const kServiceName = @"xx-service";
 
 - (void)session:(MCSession *)session didReceiveStream:(NSInputStream *)stream withName:(NSString *)streamName fromPeer:(MCPeerID *)peerID {
     NSAssert(NO, @"not supported yet");
+}
+
+- (void)handleData:(NSData *)data fromPeer:(MCPeerID *)peerID
+{
+    NSDictionary *dataDictionary = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    if ([dataDictionary[@"action"] isEqualToString:@"setup"])
+    {
+        NSError *error = nil;
+        
+        NSDictionary *dictionary = @{
+                                     @"action" : @"setup",
+                                     @"data" : [_tweakStore tweakCategories],
+                                     };
+        
+        NSData *responseData = [NSKeyedArchiver archivedDataWithRootObject:dictionary];
+        [self.session sendData:responseData toPeers:@[peerID] withMode:MCSessionSendDataReliable error:&error];
+        if (error)
+        {
+            NSLog(@"data failed to be sent");
+        }
+        return;
+    }
+    if ([dataDictionary[@"action"] isEqualToString:@"update"])
+    {
+        FBTweak *tweak = dataDictionary[@"tweak"];
+        FBTweak *localTweak = [[[_tweakStore tweakCategoryWithName:tweak.categoryName] tweakCollectionWithName:tweak.collectionName] tweakWithIdentifier:tweak.identifier];
+        localTweak.currentValue = [tweak.currentValue copy];
+        return;
+    }
 }
 
 @end

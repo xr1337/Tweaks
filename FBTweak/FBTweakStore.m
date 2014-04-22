@@ -12,8 +12,13 @@
 #import "FBTweakCategory.h"
 #import "FBTweakCollection.h"
 
+@interface FBTweakStore ()
+
+@property (nonatomic, strong) NSMutableArray *orderedCategories;
+
+@end
+
 @implementation FBTweakStore {
-  NSMutableArray *_orderedCategories;
   NSMutableDictionary *_namedCategories;
 }
 

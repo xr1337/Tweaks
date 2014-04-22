@@ -9,6 +9,8 @@
 
 #import <Foundation/Foundation.h>
 
+extern NSString *const kTweakValueChangedNotification;
+
 @protocol FBTweakObserver;
 
 /**
@@ -22,7 +24,7 @@ typedef id FBTweakValue;
   @abstract Represents a unqie, named tweak.
   @discussion A tweak contains a persistent, editable value.
  */
-@interface FBTweak : NSObject
+@interface FBTweak : NSObject <NSCoding>
 
 /**
   @abstract Creates a new tweak model.
@@ -79,6 +81,10 @@ typedef id FBTweakValue;
   @discussion Optional, removing an observer isn't required.
  */
 - (void)removeObserver:(id<FBTweakObserver>)observer;
+
+
+@property (nonatomic, strong, readwrite) NSString *collectionName;
+@property (nonatomic, strong, readwrite) NSString *categoryName;
 
 @end
 

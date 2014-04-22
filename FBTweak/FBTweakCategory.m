@@ -27,6 +27,25 @@
   return self;
 }
 
+- (id)initWithCoder:(NSCoder *)decoder
+{
+    self = [super init];
+    if (self)
+    {
+        _name = [decoder decodeObjectForKey:@"name"];
+        _orderedCollections = [decoder decodeObjectForKey:@"orderedCollections"];
+        _namedCollections = [decoder decodeObjectForKey:@"namedCollections"];
+    }
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)encoder
+{
+    [encoder encodeObject:_name forKey:@"name"];
+    [encoder encodeObject:_orderedCollections forKey:@"orderedCollections"];
+    [encoder encodeObject:_namedCollections forKey:@"namedCollections"];
+}
+
 - (FBTweakCollection *)tweakCollectionWithName:(NSString *)name
 {
   return _namedCollections[name];

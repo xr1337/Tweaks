@@ -11,6 +11,7 @@
 #import "FBTweakCategory.h"
 #import "_FBTweakCollectionViewController.h"
 #import "_FBTweakTableViewCell.h"
+#import "FBTweak.h"
 
 @interface _FBTweakCollectionViewController () <UITableViewDelegate, UITableViewDataSource>
 @end
@@ -107,7 +108,9 @@
   
   FBTweakCollection *collection = _tweakCategory.tweakCollections[indexPath.section];
   FBTweak *tweak = collection.tweaks[indexPath.row];
-  cell.tweak = tweak;
+  tweak.collectionName = collection.name;
+  tweak.categoryName = _tweakCategory.name;
+  cell.tweak = tweak;    
   
   return cell;
 }

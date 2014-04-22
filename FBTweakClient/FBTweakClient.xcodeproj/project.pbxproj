@@ -16,13 +16,13 @@
 		1886587719058099002B51F0 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1886587519058099002B51F0 /* Main_iPhone.storyboard */; };
 		1886587A19058099002B51F0 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1886587819058099002B51F0 /* Main_iPad.storyboard */; };
 		1886587D19058099002B51F0 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1886587C19058099002B51F0 /* MasterViewController.m */; };
-		1886588019058099002B51F0 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1886587F19058099002B51F0 /* DetailViewController.m */; };
 		1886588219058099002B51F0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1886588119058099002B51F0 /* Images.xcassets */; };
 		188658891905809A002B51F0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 188658881905809A002B51F0 /* XCTest.framework */; };
 		1886588A1905809A002B51F0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1886586319058099002B51F0 /* Foundation.framework */; };
 		1886588B1905809A002B51F0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1886586719058099002B51F0 /* UIKit.framework */; };
 		188658931905809A002B51F0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 188658911905809A002B51F0 /* InfoPlist.strings */; };
 		188658951905809A002B51F0 /* FBTweakClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 188658941905809A002B51F0 /* FBTweakClientTests.m */; };
+		188658A41905ABD4002B51F0 /* libFBTweak.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 188658A31905ABD4002B51F0 /* libFBTweak.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,14 +50,13 @@
 		1886587919058099002B51F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		1886587B19058099002B51F0 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		1886587C19058099002B51F0 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		1886587E19058099002B51F0 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		1886587F19058099002B51F0 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		1886588119058099002B51F0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		188658871905809A002B51F0 /* FBTweakClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FBTweakClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		188658881905809A002B51F0 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		188658901905809A002B51F0 /* FBTweakClientTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FBTweakClientTests-Info.plist"; sourceTree = "<group>"; };
 		188658921905809A002B51F0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		188658941905809A002B51F0 /* FBTweakClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FBTweakClientTests.m; sourceTree = "<group>"; };
+		188658A31905ABD4002B51F0 /* libFBTweak.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFBTweak.a; path = "../../../../../../Library/Developer/Xcode/DerivedData/FBTweakExample-eltrqonthkcryrgpepsljmelhdon/Build/Products/Debug-iphoneos/libFBTweak.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				188658A41905ABD4002B51F0 /* libFBTweak.a in Frameworks */,
 				1886586619058099002B51F0 /* CoreGraphics.framework in Frameworks */,
 				1886586819058099002B51F0 /* UIKit.framework in Frameworks */,
 				1886586419058099002B51F0 /* Foundation.framework in Frameworks */,
@@ -106,6 +106,7 @@
 		1886586219058099002B51F0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				188658A31905ABD4002B51F0 /* libFBTweak.a */,
 				1886586319058099002B51F0 /* Foundation.framework */,
 				1886586519058099002B51F0 /* CoreGraphics.framework */,
 				1886586719058099002B51F0 /* UIKit.framework */,
@@ -123,8 +124,6 @@
 				1886587819058099002B51F0 /* Main_iPad.storyboard */,
 				1886587B19058099002B51F0 /* MasterViewController.h */,
 				1886587C19058099002B51F0 /* MasterViewController.m */,
-				1886587E19058099002B51F0 /* DetailViewController.h */,
-				1886587F19058099002B51F0 /* DetailViewController.m */,
 				1886588119058099002B51F0 /* Images.xcassets */,
 				1886586A19058099002B51F0 /* Supporting Files */,
 			);
@@ -261,7 +260,6 @@
 				1886587419058099002B51F0 /* AppDelegate.m in Sources */,
 				1886587D19058099002B51F0 /* MasterViewController.m in Sources */,
 				1886587019058099002B51F0 /* main.m in Sources */,
-				1886588019058099002B51F0 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,7 +396,17 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FBTweakClient/FBTweakClient-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SYMROOT)/Headers",
+				);
 				INFOPLIST_FILE = "FBTweakClient/FBTweakClient-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/FBTweakExample-eltrqonthkcryrgpepsljmelhdon/Build/Products/Debug-iphoneos",
+				);
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -411,7 +419,17 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FBTweakClient/FBTweakClient-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SYMROOT)/Headers",
+				);
 				INFOPLIST_FILE = "FBTweakClient/FBTweakClient-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/FBTweakExample-eltrqonthkcryrgpepsljmelhdon/Build/Products/Debug-iphoneos",
+				);
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -476,6 +494,7 @@
 				1886589A1905809A002B51F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1886589B1905809A002B51F0 /* Build configuration list for PBXNativeTarget "FBTweakClientTests" */ = {
 			isa = XCConfigurationList;
@@ -484,6 +503,7 @@
 				1886589D1905809A002B51F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -11,6 +11,8 @@
 		184A94F118D26871005F2774 /* _FBTweakBindObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 184A94EF18D26871005F2774 /* _FBTweakBindObserver.m */; };
 		188658A119059D2C002B51F0 /* FBTweakMultipeer.h in Headers */ = {isa = PBXBuildFile; fileRef = 1886589F19059D2C002B51F0 /* FBTweakMultipeer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		188658A219059D2C002B51F0 /* FBTweakMultipeer.m in Sources */ = {isa = PBXBuildFile; fileRef = 188658A019059D2C002B51F0 /* FBTweakMultipeer.m */; };
+		188658A71905B1AB002B51F0 /* FBTweakStore+Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = 188658A51905B1AB002B51F0 /* FBTweakStore+Protected.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		188658A81905B1AB002B51F0 /* FBTweakStore+Protected.m in Sources */ = {isa = PBXBuildFile; fileRef = 188658A61905B1AB002B51F0 /* FBTweakStore+Protected.m */; };
 		18EFE472189EBA4900DA6A5D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18EFE471189EBA4900DA6A5D /* Foundation.framework */; };
 		18EFE480189EBA4900DA6A5D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18EFE47F189EBA4900DA6A5D /* XCTest.framework */; };
 		18EFE481189EBA4900DA6A5D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18EFE471189EBA4900DA6A5D /* Foundation.framework */; };
@@ -58,6 +60,8 @@
 		184A94EF18D26871005F2774 /* _FBTweakBindObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _FBTweakBindObserver.m; sourceTree = "<group>"; };
 		1886589F19059D2C002B51F0 /* FBTweakMultipeer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBTweakMultipeer.h; path = Remote/FBTweakMultipeer.h; sourceTree = "<group>"; };
 		188658A019059D2C002B51F0 /* FBTweakMultipeer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBTweakMultipeer.m; path = Remote/FBTweakMultipeer.m; sourceTree = "<group>"; };
+		188658A51905B1AB002B51F0 /* FBTweakStore+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FBTweakStore+Protected.h"; sourceTree = "<group>"; };
+		188658A61905B1AB002B51F0 /* FBTweakStore+Protected.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FBTweakStore+Protected.m"; sourceTree = "<group>"; };
 		18EFE46E189EBA4900DA6A5D /* libFBTweak.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFBTweak.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		18EFE471189EBA4900DA6A5D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		18EFE475189EBA4900DA6A5D /* FBTweak-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FBTweak-Prefix.pch"; sourceTree = "<group>"; };
@@ -204,6 +208,8 @@
 				18EFE526189F19B300DA6A5D /* FBTweakCategory.m */,
 				18EFE4BF189EBEAD00DA6A5D /* FBTweakStore.h */,
 				18EFE4C0189EBEAD00DA6A5D /* FBTweakStore.m */,
+				188658A51905B1AB002B51F0 /* FBTweakStore+Protected.h */,
+				188658A61905B1AB002B51F0 /* FBTweakStore+Protected.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -253,6 +259,7 @@
 				18EFE4B3189EBAC200DA6A5D /* FBTweakShakeWindow.h in Headers */,
 				18EFE536189F38D500DA6A5D /* FBTweakEnabled.h in Headers */,
 				18EFE4D0189EC70300DA6A5D /* FBTweakInlineInternal.h in Headers */,
+				188658A71905B1AB002B51F0 /* FBTweakStore+Protected.h in Headers */,
 				188658A119059D2C002B51F0 /* FBTweakMultipeer.h in Headers */,
 				18EFE527189F19B300DA6A5D /* FBTweakCategory.h in Headers */,
 				18EFE4BC189EBC4B00DA6A5D /* FBTweakCollection.h in Headers */,
@@ -354,6 +361,7 @@
 				18EFE4AF189EBABA00DA6A5D /* FBTweakShakeWindow.m in Sources */,
 				18EFE4DA189EEED800DA6A5D /* _FBTweakCollectionViewController.m in Sources */,
 				184A94F118D26871005F2774 /* _FBTweakBindObserver.m in Sources */,
+				188658A81905B1AB002B51F0 /* FBTweakStore+Protected.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

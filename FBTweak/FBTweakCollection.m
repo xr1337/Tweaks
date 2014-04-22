@@ -27,6 +27,24 @@
   return self;
 }
 
+- (id)initWithCoder:(NSCoder *)decoder
+{
+    if (self = [super init])
+    {
+        _name = [decoder decodeObjectForKey:@"name"];
+        _orderedTweaks = [decoder decodeObjectForKey:@"orderedTweaks"];
+        _identifierTweaks = [decoder decodeObjectForKey:@"identifierTweaks"];
+    }
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)encoder
+{
+    [encoder encodeObject:_name forKey:@"name"];
+    [encoder encodeObject:_orderedTweaks forKey:@"orderedTweaks"];
+    [encoder encodeObject:_identifierTweaks forKey:@"identifierTweaks"];
+}
+
 - (FBTweak *)tweakWithIdentifier:(NSString *)identifier
 {
   return _identifierTweaks[identifier];
