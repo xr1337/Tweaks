@@ -136,6 +136,7 @@ static NSString *const kServiceName = @"xx-service";
         }
         return;
     }
+    
     if ([dataDictionary[@"action"] isEqualToString:@"update"])
     {
         FBTweak *tweak = dataDictionary[@"tweak"];

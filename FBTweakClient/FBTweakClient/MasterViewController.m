@@ -15,7 +15,7 @@
 
 static NSString * const XXServiceType = @"xx-service";
 
-@interface MasterViewController ()<MCBrowserViewControllerDelegate, MCSessionDelegate> {
+@interface MasterViewController ()<MCBrowserViewControllerDelegate, MCSessionDelegate, FBTweakViewControllerDelegate> {
     NSMutableArray *_objects;
 }
 
@@ -103,7 +103,13 @@ static NSString * const XXServiceType = @"xx-service";
         return;
     }
     [self handleData:dataDictionary];
+}
 
+- (void)tweakViewControllerPressedDone:(FBTweakViewController *)tweakViewController
+{
+    [tweakViewController dismissViewControllerAnimated:YES completion:^{
+        [self.session disconnect];
+    }];
 }
 
 - (void)session:(MCSession *)session didStartReceivingResourceWithName:(NSString *)resourceName fromPeer:(MCPeerID *)peerID withProgress:(NSProgress *)progress
@@ -130,6 +136,7 @@ static NSString * const XXServiceType = @"xx-service";
         [store setProtectedOrderedCategories:array];
         dispatch_async(dispatch_get_main_queue(), ^{
             FBTweakViewController *viewController = [[FBTweakViewController alloc] initWithStore:store];
+            viewController.tweaksDelegate = self;
             [self.navigationController presentViewController:viewController animated:YES completion:nil];
         });
     }
