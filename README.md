@@ -72,6 +72,19 @@ To configure your tweaks, you need a way to show the configuration UI. There's t
 
  - You can present a `FBTweakViewController` from anywhere in your app. Be sure to restrict the activation UI to debug builds!
 
+### Remote Tweaks UI
+If theres another device at hand, you can utilize a tweak UI from a remote device with multipeer connectivity.
+The only drawback is both devices should be iOS 7+.
+To start the advertiser, add to your applicationDidBecomeActive 
+
+```objective-c
+- (void)applicationDidBecomeActive:(UIApplication *)application
+{
+    [[FBTweakMultipeer shareInstance] start];
+}
+```
+To load the Remote UI, build and run the FBTweakClient scheme (FBTweakExample.xcworkspace) to the other device.
+
 ### Advanced
 You can also access the objects that make up the macros mentioned above. That can be useful for more complex scenarios, like adjusting members of a C structure.
 
