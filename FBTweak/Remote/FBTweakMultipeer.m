@@ -13,7 +13,14 @@
 #import "FBTweakCollection.h"
 #import "FBTweak.h"
 
-static NSString *const kServiceName = @"xx-service";
+NSString *const kMultipeerServiceName = @"xx-service";
+NSString *const kMultipeerActionKey = @"action";
+NSString *const kMultipeerDataKey = @"data";
+NSString *const kMultipeerTweakKey = @"tweak";
+
+NSString *const kMultipeerSetupParameter = @"setup";
+NSString *const kMultipeerUpdateParameter = @"update";
+
 
 @interface FBTweakMultipeer () <MCSessionDelegate>
 
@@ -42,9 +49,9 @@ static NSString *const kServiceName = @"xx-service";
 {
     self = [super init];
     if (self) {
-        self.tweakStore = [FBTweakStore sharedInstance];
+        _tweakStore = [FBTweakStore sharedInstance];
+        _localPeerId = [[MCPeerID alloc] initWithDisplayName:[UIDevice currentDevice].name];
         
-        [self setupPeerWithDisplayName:[UIDevice currentDevice].name];
         [self setupSession];
     }
     return self;
@@ -57,15 +64,10 @@ static NSString *const kServiceName = @"xx-service";
 
 - (void)stop
 {
-    NSAssert(NO, @"not implemented yet");
+    [self.session disconnect];
 }
 
 #pragma mark - setup
-
-- (void)setupPeerWithDisplayName:(NSString *)displayName
-{
-    self.localPeerId = [[MCPeerID alloc] initWithDisplayName:displayName];
-}
 
 - (void)setupSession
 {
@@ -77,7 +79,7 @@ static NSString *const kServiceName = @"xx-service";
 {
     if (advertise)
     {
-        self.advertiser = [[MCAdvertiserAssistant alloc] initWithServiceType:kServiceName discoveryInfo:nil session:self.session];
+        self.advertiser = [[MCAdvertiserAssistant alloc] initWithServiceType:kMultipeerServiceName discoveryInfo:nil session:self.session];
         [self.advertiser start];
     }
     else
@@ -88,7 +90,6 @@ static NSString *const kServiceName = @"xx-service";
 }
 
 #pragma mark - multipeer
-
 
 
 - (void)session:(MCSession *)session peer:(MCPeerID *)peerID didChangeState:(MCSessionState)state
@@ -119,27 +120,27 @@ static NSString *const kServiceName = @"xx-service";
 - (void)handleData:(NSData *)data fromPeer:(MCPeerID *)peerID
 {
     NSDictionary *dataDictionary = [NSKeyedUnarchiver unarchiveObjectWithData:data];
-    if ([dataDictionary[@"action"] isEqualToString:@"setup"])
+    
+    if ([dataDictionary[kMultipeerActionKey] isEqualToString:kMultipeerSetupParameter])
     {
-        NSError *error = nil;
-        
         NSDictionary *dictionary = @{
-                                     @"action" : @"setup",
-                                     @"data" : [_tweakStore tweakCategories],
+                                     kMultipeerActionKey : kMultipeerSetupParameter,
+                                     kMultipeerDataKey : [_tweakStore tweakCategories],
                                      };
         
         NSData *responseData = [NSKeyedArchiver archivedDataWithRootObject:dictionary];
+        NSError *error = nil;
         [self.session sendData:responseData toPeers:@[peerID] withMode:MCSessionSendDataReliable error:&error];
         if (error)
         {
-            NSLog(@"data failed to be sent");
+            NSLog(@"error %@", error.description);
         }
         return;
     }
     
-    if ([dataDictionary[@"action"] isEqualToString:@"update"])
+    if ([dataDictionary[kMultipeerActionKey] isEqualToString:kMultipeerUpdateParameter])
     {
-        FBTweak *tweak = dataDictionary[@"tweak"];
+        FBTweak *tweak = dataDictionary[kMultipeerTweakKey];
         FBTweak *localTweak = [[[_tweakStore tweakCategoryWithName:tweak.categoryName] tweakCollectionWithName:tweak.collectionName] tweakWithIdentifier:tweak.identifier];
         localTweak.currentValue = [tweak.currentValue copy];
         return;

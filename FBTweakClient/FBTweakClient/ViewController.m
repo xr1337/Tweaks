@@ -6,16 +6,16 @@
 //  Copyright (c) 2014 XR1337. All rights reserved.
 //
 
-#import "MasterViewController.h"
+#import "ViewController.h"
 #import <FBTweak/FBTweakStore+Protected.h>
 #import <FBTweak/FBTweakViewController.h>
 #import <FBTweak/FBTweak.h>
+#import <FBTweak/FBTweakMultipeer.h>
 
 @import MultipeerConnectivity;
 
-static NSString * const XXServiceType = @"xx-service";
-
-@interface MasterViewController ()<MCBrowserViewControllerDelegate, MCSessionDelegate, FBTweakViewControllerDelegate> {
+@interface ViewController ()<MCBrowserViewControllerDelegate, MCSessionDelegate, FBTweakViewControllerDelegate>
+{
     NSMutableArray *_objects;
 }
 
@@ -26,12 +26,7 @@ static NSString * const XXServiceType = @"xx-service";
 @property (nonatomic, strong)MCPeerID *remotePeerID;
 @end
 
-@implementation MasterViewController
-
-- (void)awakeFromNib
-{
-    [super awakeFromNib];
-}
+@implementation ViewController
 
 - (void)viewDidLoad
 {
@@ -47,30 +42,26 @@ static NSString * const XXServiceType = @"xx-service";
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-
 #pragma mark - peer discovery
 
 - (void)findAdvertiser
 {
     self.localPeerID = [[MCPeerID alloc] initWithDisplayName:[[UIDevice currentDevice] name]];
     
-    self.browser = [[MCNearbyServiceBrowser alloc] initWithPeer:_localPeerID serviceType:XXServiceType];
+    self.browser = [[MCNearbyServiceBrowser alloc] initWithPeer:_localPeerID serviceType:kMultipeerServiceName];
     self.session = [[MCSession alloc] initWithPeer:_localPeerID
                                   securityIdentity:nil
                               encryptionPreference:MCEncryptionNone];
     self.session.delegate = self;
     
-    MCBrowserViewController *browserViewController =
-    [[MCBrowserViewController alloc] initWithBrowser:self.browser
-                                             session:self.session];
+    MCBrowserViewController *browserViewController = [[MCBrowserViewController alloc] initWithBrowser:self.browser session:self.session];
     browserViewController.delegate = self;
     
     [self presentViewController:browserViewController
                                       animated:YES
-                                    completion:
-     ^{
-         [self.browser startBrowsingForPeers];
-     }];
+                                    completion: ^{
+                                        [self.browser startBrowsingForPeers];
+                                    }];
 }
 
 - (void)browserViewControllerDidFinish:(MCBrowserViewController *)browserViewController
@@ -129,9 +120,9 @@ static NSString * const XXServiceType = @"xx-service";
 
 - (void)handleData:(NSDictionary *)data
 {
-    if([data[@"action"] isEqualToString:@"setup"])
+    if([data[kMultipeerActionKey] isEqualToString:kMultipeerSetupParameter])
     {
-        NSMutableArray *array = data[@"data"];
+        NSMutableArray *array = data[kMultipeerDataKey];
         FBTweakStore *store = [FBTweakStore sharedInstance];
         [store setProtectedOrderedCategories:array];
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -145,7 +136,7 @@ static NSString * const XXServiceType = @"xx-service";
 - (void)requestSetup
 {
     NSDictionary *dictionary = @{
-                                 @"action" : @"setup",
+                                 kMultipeerActionKey : kMultipeerSetupParameter,
                                  };
     
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:dictionary];
@@ -153,17 +144,16 @@ static NSString * const XXServiceType = @"xx-service";
     [self.session sendData:data toPeers:@[self.remotePeerID] withMode:MCSessionSendDataReliable error:&error];
     if (!error)
     {
-        NSLog(@"%@",[error description]);
+        NSLog(@"Error :%@",[error description]);
     }
 }
 
 - (void)sendUpdates:(NSNotification *)notificationObject
 {
-    NSLog(@"sending data");
     FBTweak *tweak = [notificationObject object];
     NSDictionary *dictionary = @{
-                                 @"action" : @"update",
-                                 @"tweak" : tweak,
+                                 kMultipeerActionKey : kMultipeerUpdateParameter,
+                                 kMultipeerTweakKey  : tweak,
                                  };
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:dictionary];
     NSError *error;

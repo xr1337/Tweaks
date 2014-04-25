@@ -9,6 +9,15 @@
 #import <Foundation/Foundation.h>
 @import MultipeerConnectivity;
 
+extern NSString *const kMultipeerServiceName;
+extern NSString *const kMultipeerActionKey;
+extern NSString *const kMultipeerDataKey;
+extern NSString *const kMultipeerTweakKey;
+
+extern NSString *const kMultipeerSetupParameter;
+extern NSString *const kMultipeerUpdateParameter;
+
+
 @interface FBTweakMultipeer : NSObject
 
 + (instancetype)shareInstance;

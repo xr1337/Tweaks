@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface MasterViewController : UIViewController
+@interface ViewController : UIViewController
 
 
 @end
