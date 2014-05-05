@@ -15,6 +15,25 @@ NSString *const kTweakValueChangedNotification = @"kTweakValueChangedNotificatio
   NSHashTable *_observers;
 }
 
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+  NSString *identifier = [coder decodeObjectForKey:@"identifier"];
+  
+  if ((self = [self initWithIdentifier:identifier])) {
+    _name = [coder decodeObjectForKey:@"name"];
+    _defaultValue = [coder decodeObjectForKey:@"defaultValue"];
+    _minimumValue = [coder decodeObjectForKey:@"minimumValue"];
+    _maximumValue = [coder decodeObjectForKey:@"maximumValue"];
+    
+    // Fall back to the user-defaults loaded value if current value isn't set.
+    _currentValue = [coder decodeObjectForKey:@"currentValue"] ?: _currentValue;
+    _categoryName = [decoder decodeObjectForKey:@"categoryName"];
+    _collectionName = [decoder decodeObjectForKey:@"collectionName"];
+  }
+  
+  return self;
+}
+
 - (instancetype)initWithIdentifier:(NSString *)identifier
 {
   if ((self = [super init])) {
@@ -25,32 +44,18 @@ NSString *const kTweakValueChangedNotification = @"kTweakValueChangedNotificatio
   return self;
 }
 
-- (id)initWithCoder:(NSCoder *)decoder
+- (void)encodeWithCoder:(NSCoder *)coder
 {
-    if (self = [super init])
-    {
-        _identifier = [decoder decodeObjectForKey:@"identifier"];
-        _name = [decoder decodeObjectForKey:@"name"];
-        _defaultValue = [decoder decodeObjectForKey:@"defaultValue"];
-        _currentValue = [decoder decodeObjectForKey:@"currentValue"];
-        _minimumValue = [decoder decodeObjectForKey:@"minimumValue"];
-        _maximumValue = [decoder decodeObjectForKey:@"maximumValue"];
-        _categoryName = [decoder decodeObjectForKey:@"categoryName"];
-        _collectionName = [decoder decodeObjectForKey:@"collectionName"];
-    }
-    return self;
-}
-
-- (void)encodeWithCoder:(NSCoder *)encoder
-{
-    [encoder encodeObject:_name forKey:@"name"];
-    [encoder encodeObject:_identifier forKey:@"identifier"];
-    [encoder encodeObject:_defaultValue forKey:@"defaultValue"];
-    [encoder encodeObject:_currentValue forKey:@"currentValue"];
-    [encoder encodeObject:_minimumValue forKey:@"minimumValue"];
-    [encoder encodeObject:_maximumValue forKey:@"maximumValue"];
-    [encoder encodeObject:_categoryName forKey:@"categoryName"];
-    [encoder encodeObject:_collectionName forKey:@"collectionName"];
+  [coder encodeObject:_identifier forKey:@"identifier"];
+  [coder encodeObject:_name forKey:@"name"];
+  [encoder encodeObject:_categoryName forKey:@"categoryName"];
+  [encoder encodeObject:_collectionName forKey:@"collectionName"];
+  if (!self.isAction) {
+    [coder encodeObject:_defaultValue forKey:@"defaultValue"];
+    [coder encodeObject:_minimumValue forKey:@"minimumValue"];
+    [coder encodeObject:_maximumValue forKey:@"maximumValue"];
+    [coder encodeObject:_currentValue forKey:@"currentValue"];
+  }
 }
 
 - (BOOL)isAction

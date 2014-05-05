@@ -15,6 +15,21 @@
   NSMutableDictionary *_namedCollections;
 }
 
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+  NSString *name = [coder decodeObjectForKey:@"name"];
+  
+  if ((self = [self initWithName:name])) {
+    _orderedCollections = [[coder decodeObjectForKey:@"collections"] mutableCopy];
+    _namedCollections = [decoder decodeObjectForKey:@"namedCollections"];
+    for (FBTweakCollection *tweakCollection in _orderedCollections) {
+      [_namedCollections setObject:tweakCollection forKey:tweakCollection.name];
+    }
+  }
+  
+  return self;
+}
+
 - (instancetype)initWithName:(NSString *)name
 {
   if ((self = [super init])) {
@@ -27,22 +42,10 @@
   return self;
 }
 
-- (id)initWithCoder:(NSCoder *)decoder
-{
-    self = [super init];
-    if (self)
-    {
-        _name = [decoder decodeObjectForKey:@"name"];
-        _orderedCollections = [decoder decodeObjectForKey:@"orderedCollections"];
-        _namedCollections = [decoder decodeObjectForKey:@"namedCollections"];
-    }
-    return self;
-}
-
 - (void)encodeWithCoder:(NSCoder *)encoder
 {
     [encoder encodeObject:_name forKey:@"name"];
-    [encoder encodeObject:_orderedCollections forKey:@"orderedCollections"];
+    [encoder encodeObject:_orderedCollections forKey:@"collections"];
     [encoder encodeObject:_namedCollections forKey:@"namedCollections"];
 }
 
