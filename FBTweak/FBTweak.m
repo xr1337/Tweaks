@@ -27,8 +27,8 @@ NSString *const kTweakValueChangedNotification = @"kTweakValueChangedNotificatio
     
     // Fall back to the user-defaults loaded value if current value isn't set.
     _currentValue = [coder decodeObjectForKey:@"currentValue"] ?: _currentValue;
-    _categoryName = [decoder decodeObjectForKey:@"categoryName"];
-    _collectionName = [decoder decodeObjectForKey:@"collectionName"];
+    _categoryName = [coder decodeObjectForKey:@"categoryName"];
+    _collectionName = [coder decodeObjectForKey:@"collectionName"];
   }
   
   return self;
@@ -48,8 +48,8 @@ NSString *const kTweakValueChangedNotification = @"kTweakValueChangedNotificatio
 {
   [coder encodeObject:_identifier forKey:@"identifier"];
   [coder encodeObject:_name forKey:@"name"];
-  [encoder encodeObject:_categoryName forKey:@"categoryName"];
-  [encoder encodeObject:_collectionName forKey:@"collectionName"];
+  [coder encodeObject:_categoryName forKey:@"categoryName"];
+  [coder encodeObject:_collectionName forKey:@"collectionName"];
   if (!self.isAction) {
     [coder encodeObject:_defaultValue forKey:@"defaultValue"];
     [coder encodeObject:_minimumValue forKey:@"minimumValue"];

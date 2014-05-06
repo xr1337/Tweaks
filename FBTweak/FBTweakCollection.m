@@ -21,7 +21,7 @@
   
   if ((self = [self initWithName:name])) {
     _orderedTweaks = [[coder decodeObjectForKey:@"tweaks"] mutableCopy];
-    _identifierTweaks = [decoder decodeObjectForKey:@"identifierTweaks"];
+    _identifierTweaks = [coder decodeObjectForKey:@"identifierTweaks"];
     
     for (FBTweak *tweak in _orderedTweaks) {
       [_identifierTweaks setObject:tweak forKey:tweak.identifier];

@@ -21,7 +21,7 @@
   
   if ((self = [self initWithName:name])) {
     _orderedCollections = [[coder decodeObjectForKey:@"collections"] mutableCopy];
-    _namedCollections = [decoder decodeObjectForKey:@"namedCollections"];
+    _namedCollections = [coder decodeObjectForKey:@"namedCollections"];
     for (FBTweakCollection *tweakCollection in _orderedCollections) {
       [_namedCollections setObject:tweakCollection forKey:tweakCollection.name];
     }
